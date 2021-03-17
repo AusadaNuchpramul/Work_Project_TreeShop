@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "d040dd1d-7965-46dc-a6d9-c504f651e9d5",
+		"name": "workshop4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert trees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"should have key mongo_id\", function () {",
+							"    pm.expect(jsonData.data).to.have.property('tree_id');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : \"111\",\n    \"name_tree\" : \"aaaa\",\n    \"age_tree\" : \"12\",\n    \"catagroy\" : \"ยืนต้น\",\n    \"price\" : \"100\" \n}\n"
+				},
+				"url": {
+					"raw": "{{apiUrl}}/trees",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find trees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Should return data json 12 fields\", function () {",
+							"    pm.expect(Object.keys(jsonData.data[0]).length).to.eql(12);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/trees/",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find trees sort by age order by asc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Should return data json 12 fields\", function () {",
+							"    pm.expect(Object.keys(jsonData.data[0]).length).to.eql(12);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/trees/?sort_by=age&order=asc",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees",
+						""
+					],
+					"query": [
+						{
+							"key": "sort_by",
+							"value": "age"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find trees sort by age order by desc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Should return data json 12 fields\", function () {",
+							"    pm.expect(Object.keys(jsonData.data[0]).length).to.eql(12);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/trees/?sort_by=age&order=desc",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees",
+						""
+					],
+					"query": [
+						{
+							"key": "sort_by",
+							"value": "age"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update trees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"should have key mongo_id\", function () {",
+							"    pm.expect(jsonData.data).to.have.property('student_id');",
+							"})",
+							"",
+							"pm.test(\"should have key modified_count\", function () {",
+							"    pm.expect(jsonData.data).to.have.property('modified_count');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\" : 74\n}"
+				},
+				"url": {
+					"raw": "{{apiUrl}}/trees/001",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees",
+						"001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find trees by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Should return data json 12 fields\", function () {",
+							"    pm.expect(Object.keys(jsonData.data).length).to.eql(12);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/trees/001",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees",
+						"001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete trees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"should have key mongo_id\", function () {",
+							"    pm.expect(jsonData.data).to.have.property('tree_id');",
+							"})",
+							"",
+							"pm.test(\"should have key deleted_count\", function () {",
+							"    pm.expect(jsonData.data).to.have.property('deleted_count');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "var jsonData = pm.response.json();\n\npm.test(\"should have key mongo_id\", function () {\n    pm.expect(jsonData.data).to.have.property('tree_id');\n})\n\npm.test(\"should have key modified_count\", function () {\n    pm.expect(jsonData.data).to.have.property('deleted_count');\n})"
+				},
+				"url": {
+					"raw": "{{apiUrl}}/trees/111",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"trees",
+						"111"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
