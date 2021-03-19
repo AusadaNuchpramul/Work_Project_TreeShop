@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_70c79947727442a8a30117cc002e9c55 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_70c79947727442a8a30117cc002e9c55" ></div>
+        
+</body>
+<script>    
+    
+            var map_70c79947727442a8a30117cc002e9c55 = L.map(
+                "map_70c79947727442a8a30117cc002e9c55",
+                {
+                    center: [13.120901, 100.919166],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_be1f761788e14e7c948254299cea5d6b = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_70c79947727442a8a30117cc002e9c55);
+        
+    
+            var feature_group_bad2d2dd22974c62891191f41108f28a = L.featureGroup(
+                {}
+            ).addTo(map_70c79947727442a8a30117cc002e9c55);
+        
+    
+            var marker_cfa4b901aa7b42bbacd778e6cb20a8a4 = L.marker(
+                [13.120901, 100.919166],
+                {}
+            ).addTo(feature_group_bad2d2dd22974c62891191f41108f28a);
+        
+    
+            var icon_4fe3aa9cd35d4f16ab2efd9a2ac9707f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cfa4b901aa7b42bbacd778e6cb20a8a4.setIcon(icon_4fe3aa9cd35d4f16ab2efd9a2ac9707f);
+        
+    
+        var popup_5541ca15115246ffa269cc7df389cabc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b7e23ffbb9a14e6d8def52aa3780b66f = $(`<div id="html_b7e23ffbb9a14e6d8def52aa3780b66f" style="width: 100.0%; height: 100.0%;">ร้านต้นไม้มีชีวิต</div>`)[0];
+            popup_5541ca15115246ffa269cc7df389cabc.setContent(html_b7e23ffbb9a14e6d8def52aa3780b66f);
+        
+
+        marker_cfa4b901aa7b42bbacd778e6cb20a8a4.bindPopup(popup_5541ca15115246ffa269cc7df389cabc)
+        ;
+
+        
+    
+    
+            var marker_a27f91e69cec483f8c9b8d34b498aaed = L.marker(
+                [20.2778358878, 99.8697515215],
+                {}
+            ).addTo(feature_group_bad2d2dd22974c62891191f41108f28a);
+        
+    
+            var icon_2c0dbad56fcc4963b2a429eff3165580 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a27f91e69cec483f8c9b8d34b498aaed.setIcon(icon_2c0dbad56fcc4963b2a429eff3165580);
+        
+    
+        var popup_d875f4488ce54b56a4c605207adf7052 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_80a6dace231f4897919865c3e8a2c3c6 = $(`<div id="html_80a6dace231f4897919865c3e8a2c3c6" style="width: 100.0%; height: 100.0%;">ร้านเหนือต้นไม้คือท้องฟ้า</div>`)[0];
+            popup_d875f4488ce54b56a4c605207adf7052.setContent(html_80a6dace231f4897919865c3e8a2c3c6);
+        
+
+        marker_a27f91e69cec483f8c9b8d34b498aaed.bindPopup(popup_d875f4488ce54b56a4c605207adf7052)
+        ;
+
+        
+    
+    
+            var marker_560488d9825941a8b49fb05352e6e0d8 = L.marker(
+                [12.4453, 99.98189],
+                {}
+            ).addTo(feature_group_bad2d2dd22974c62891191f41108f28a);
+        
+    
+            var icon_ec12f4aba7e34c078f3aafaefa48abe2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_560488d9825941a8b49fb05352e6e0d8.setIcon(icon_ec12f4aba7e34c078f3aafaefa48abe2);
+        
+    
+        var popup_b9ff0f78ccee46fda095166eebf8d7d9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b5c120d7fc63467e99f5499dc1474f50 = $(`<div id="html_b5c120d7fc63467e99f5499dc1474f50" style="width: 100.0%; height: 100.0%;">ร้านรักโลก รักดิน</div>`)[0];
+            popup_b9ff0f78ccee46fda095166eebf8d7d9.setContent(html_b5c120d7fc63467e99f5499dc1474f50);
+        
+
+        marker_560488d9825941a8b49fb05352e6e0d8.bindPopup(popup_b9ff0f78ccee46fda095166eebf8d7d9)
+        ;
+
+        
+    
+    
+            var marker_1e0260116b8140dcbd52808a39c47028 = L.marker(
+                [5.77361, 101.06056],
+                {}
+            ).addTo(feature_group_bad2d2dd22974c62891191f41108f28a);
+        
+    
+            var icon_b6936a1c7e2f4e1dbc70c425b221e829 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1e0260116b8140dcbd52808a39c47028.setIcon(icon_b6936a1c7e2f4e1dbc70c425b221e829);
+        
+    
+        var popup_87c7b726bc9c4836b2c59df110a1c94a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_058adf5e51404928961f8fb7f4e43d35 = $(`<div id="html_058adf5e51404928961f8fb7f4e43d35" style="width: 100.0%; height: 100.0%;">ร้านใต้ต้นไม้คือพื้นดิน</div>`)[0];
+            popup_87c7b726bc9c4836b2c59df110a1c94a.setContent(html_058adf5e51404928961f8fb7f4e43d35);
+        
+
+        marker_1e0260116b8140dcbd52808a39c47028.bindPopup(popup_87c7b726bc9c4836b2c59df110a1c94a)
+        ;
+
+        
+    
+</script>

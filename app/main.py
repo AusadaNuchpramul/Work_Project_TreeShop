@@ -4,9 +4,11 @@ from starlette.responses import JSONResponse
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 
+
 from database.mongodb import MongoDB
 from config.development import config
-from model.Tree import createShoptreeModel, updateShoptreeModel
+from model.Tree import createShoptreeModel, updateShoptreeModel,createNameshoptreeModel,updateNameshoptreeModel
+
 
 mongo_config = config["mongo_config"]
 mongo_db = MongoDB(
@@ -19,6 +21,18 @@ mongo_db = MongoDB(
     mongo_config["collection"],
 )
 mongo_db._connect()
+
+mongo_config_area = config["mongo_config_area"]
+mongo_db_area = MongoDB(
+    mongo_config_area["host"],
+    mongo_config_area["port"],
+    mongo_config_area["user"],
+    mongo_config_area["password"],
+    mongo_config_area["auth_db"],
+    mongo_config_area["db"],
+    mongo_config_area["collection"],
+)
+mongo_db_area._connect()
 
 app = FastAPI()
 
@@ -35,7 +49,26 @@ app.add_middleware(
 def index():
     return JSONResponse(content={"message": "Trees Info"}, status_code=200)
 
+#area
+@app.get("/areas/")
+def get_areas(
+    sort_by: Optional[str] = None,
+    order: Optional[str] = Query(None, min_length=3, max_length=4),
+):
 
+    try:
+        result = mongo_db_area.find(sort_by, order)
+    except:
+        raise HTTPException(status_code=500, detail="Something went wrong !!")
+
+    return JSONResponse(
+        content={"status": "OK", "data": result},
+        status_code=200,
+    )
+
+
+
+#tree
 @app.get("/trees/")
 def get_trees(
     sort_by: Optional[str] = None,
